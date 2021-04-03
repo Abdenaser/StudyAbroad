@@ -1,0 +1,675 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap);
+
+/* keyframes */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+/* fin de keyframes */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.gotopbtn{
+  z-index: 10;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: #1289A7;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+}
+
+/* debut style logo */
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-lien img {
+  width: 350px;
+  height: 120px;
+}
+/* fin style logo */
+
+/* debut style nav */
+nav {
+  background: #1289A7;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  float: right;
+  z-index: 5;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li {
+  float: left;
+  background: #1289A7;
+  margin: 0 110px;
+}
+
+nav ul .active > a {
+  border-bottom: 5px solid #fff;
+  color: gold;
+}
+
+nav ul li a {
+  color: #fff;
+  line-height: 70px;
+  font-size: 18px;
+  padding: 18px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav ul li a:hover {
+  color: gold;
+  transition: 0.7s;
+}
+
+nav ul ul {
+  position: absolute;
+  top: 110px;
+  opacity: 0;
+  visibility: hidden;
+  transition: top 0.5s;
+}
+
+nav ul li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+  top: 60px;
+  text-align: center;
+}
+
+nav ul ul li {
+  position: relative;
+  margin: 0;
+  width: 150px;
+  float: none;
+  display: list-item;
+}
+
+nav ul ul li:not(:last-child) {
+  border-bottom: 2px solid #fff;
+}
+
+nav ul ul li a {
+  line-height: 50px;
+  margin: 0;
+  padding: 8px 0;
+}
+
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  left: 150px;
+}
+
+.bars,
+.show,
+nav input {
+  display: none;
+}
+/* fin style nav */
+
+/* debut intro style */
+
+.intro {
+  min-height: 80vh;
+  width: 100%;
+  background: url(../images/bg.jpg) center;
+  background-size: cover;
+}
+
+.text-box {
+  position: absolute;
+  width: 90%;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-box h1 {
+  font-size: 58px;
+}
+
+.text-box p {
+  text-align: center;
+  margin: 10px 0 40px;
+  font-size: 20px;
+}
+
+.text-box .begin-btn {
+  display: block;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 17px;
+  background: transparent;
+}
+
+.text-box .begin-btn:hover,
+.contact a:hover {
+  border: 1px solid #1289A7;
+  background: #1289A7;
+  transition: 0.7s;
+}
+
+/* fin intro style */
+
+/* debut découvrir-pays style */
+.découvrir-pays {
+  width: 80%;
+  margin: auto;
+  padding-top: 70px;
+}
+
+.découvrir-pays h1 {
+  text-align: center;
+  font-size: 55px;
+  color: black;
+}
+
+.pays-row {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pays-row .pays-col {
+  flex-basis: 32%;
+  background: #1289A7;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.pays-row:first-of-type {
+  justify-content: center;
+}
+
+.pays-row:first-of-type .pays-col {
+  flex-basis: 70%;
+}
+
+.flags {
+  width: 100px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+/* fin découvrir-pays style */
+
+/* debut partie Contact */
+.contact {
+  margin: 100px auto;
+  width: 80%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../images/contact-bg.jpg) center;
+  background-size: cover;
+  border-radius: 10px;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.contact h1 {
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
+.contact a {
+  padding: 10px 20px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.contact-section {
+  height: 100vh;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../images/contact-bg2.jpg) ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-section h1 {
+    color:#1289A7;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.contact-section div h3 i {
+  background-color: white;
+  color: #1289A7;
+  border: white 6px solid;
+  border-radius: 50%;
+}
+
+.contact-infos {
+  font-size: 20px;
+  margin: auto 0;
+}
+
+.contact-form label {
+  color: #1289A7;
+}
+
+.contact-form {
+  padding: 20px;
+  border-radius: 5%;
+  background: white;
+  color: #1289A7;
+  margin-left: 300px;
+}
+
+.envoyer {
+  display: flex;
+  justify-content: center;
+}
+
+.envoyer button {
+  margin: 10px;
+  padding: 10px 80px;
+  color: #fff;
+  font-weight: bold;
+  background: #1289A7;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.envoyer button:hover {
+  color: gold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: 2px solid #1289A7;
+  resize: none;
+  outline: none;
+  color: black;
+  font-weight: 0px;
+}
+/* fin partie contact */
+
+/* debut partie footer */
+.footer {
+  position: relative;
+  width: 100%;
+  background: rgb(201, 201, 201);
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer * {
+  color: black;
+}
+
+.social-icons {
+  margin-right: 5px;
+}
+
+.social-icons a:first-child i:hover {
+  color: #2851a3;
+}
+
+.social-icons a:last-child i:hover {
+  color: #dc448f;
+}
+
+/* fin partie footer */
+
+
+
+
+/* MEDIA QUERRIES */
+@media (max-width: 1884px) {
+  /* partie nav */
+  nav ul li {
+    margin: 0 90px;
+  }
+}
+
+@media (max-width: 1484px) {
+  /* partie nav */
+  nav ul li {
+    margin: 0 65px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+    line-height: 50px;
+    padding: 9px 0;
+  }
+
+  nav ul ul li a {
+    line-height: 40px;
+    padding: 4px 0;
+  }
+
+  nav ul li:hover > ul {
+    top: 50px;
+  }
+
+  nav ul ul ul li {
+    top: -50px;
+  }
+
+  /* partie logo */
+  .logo-lien img {
+    width: 300px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 1288px) {
+  /* partie nav */
+  nav ul li {
+    margin: 0 50px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  nav ul ul li a {
+    padding: 5px 0;
+  }
+
+  /* partie intro */
+  .text-box h1 {
+    font-size: 37px;
+  }
+
+  .text-box p {
+    font-size: 18px;
+  }
+
+  .text-box .begin-btn {
+    font-size: 15px;
+  }
+
+  /* partie décourvrir-pays */
+  .découvrir-pays h1 {
+    font-size: 40px;
+  }
+
+  .pays-row {
+    margin: 10px;
+    flex-direction: column;
+  }
+
+  .pays-row .pays-col {
+    margin: 10px;
+  }
+
+  /* partie contact */
+  .contact-infos {
+    align-items: center;
+    font-size: 18px;
+    margin: 30px 0;
+  }
+
+  .contact-section {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    margin: auto;
+  }
+
+}
+
+@media (max-width: 975px) {
+  /* partie nav */
+  nav ul li {
+    margin: 0 40px;
+  }
+
+  nav ul li a {
+    font-size: 12px;
+    padding: 12px 0;
+  }
+
+  nav ul ul li a {
+    padding: 7px 0;
+  }
+
+  /* partie logo */
+  .logo-lien img {
+    width: 250px;
+    height: 90px;
+  }
+
+  /* partie contact */
+  .contact h1 {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .contact a {
+    padding: 8px 18px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  /* partie logo */
+  .logo-lien img {
+    width: 200px;
+    height: 65px;
+  }
+
+  /* partie nav */
+  nav ul {
+    width: 100%;
+    background: #1289A7;
+    padding-left: 30px;
+  }
+
+  nav ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul .active > a {
+    border-bottom: none;
+  }
+
+  ul li .show {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    cursor: pointer;
+  }
+
+  ul li #first {
+    padding: 18px 0;
+  }
+
+  nav ul ul {
+    position: static;
+    float: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav ul ul li {
+    position: static;
+    width: 100%;
+    display: block;
+    padding: 5px 20px;
+  }
+
+  nav ul ul li:not(:last-child) {
+    border-bottom: none;
+  }
+
+  nav ul ul ul li {
+    position: static;
+    display: flex;
+    padding: 0;
+  }
+
+  .show:hover {
+    color: gold;
+  }
+
+  [id="btn-1"]:checked + ul,
+  [id="btn-2"]:checked + ul,
+  [id="btn-3"]:checked + ul {
+    display: block;
+    animation: fadeIn 0.7s;
+  }
+
+  .show + a,
+  ul {
+    display: none;
+  }
+
+  [id="btn"]:checked + ul,
+  nav {
+    z-index: 1;
+    display: block;
+    animation: fadeInLeft 0.7s;
+  }
+
+  /* partie icons */
+  .bars {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #1289A7;
+    cursor: pointer;
+  }
+
+  .social-icons {
+    flex-direction: row;
+    width: 100px;
+  }
+
+  .social-icons a {
+    padding: 3px;
+  }
+
+  .bars:hover {
+    color: teal;
+  }
+
+  /* intro */
+  .text-box {
+    top: 50%;
+  }
+
+  .text-box h1 {
+    font-size: 18px;
+  }
+
+  .text-box p {
+    font-size: 12px;
+  }
+
+  .text-box .begin-btn {
+    font-size: 12px;
+  }
+
+  /* partie décourvrir-pays */
+  .découvrir-pays * {
+    font-size: 12px;
+  }
+
+  .découvrir-pays h1 {
+    font-size: 30px;
+  }
+
+  /* partie footer */
+  .footer p {
+    font-size: 10px;
+  }
+
+  .footer .social-icons {
+    display: none;
+  }
+}
+
+@media (max-width: 475px) {
+    .contact-infos {
+        display: none;
+    }
+}
