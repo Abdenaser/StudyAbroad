@@ -651,6 +651,9 @@ strong {
   .univ-section center {
     display: none;
   }
+   .country-info p {
+    text-align:left;
+  }
   /*contact*/
   .contact {
     margin: 30px auto;
