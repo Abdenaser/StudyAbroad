@@ -305,6 +305,10 @@ nav input,
   color: gold;
 }
 
+.country-info .country-name {
+  color :white;
+}
+
 .country-info p {
   font-size: 16px;
   padding-left: 10px;
